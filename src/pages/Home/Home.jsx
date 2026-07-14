@@ -1,4 +1,5 @@
 import "./Home.css";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -18,15 +19,15 @@ function Home() {
           problem-solving.
         </p>
 
-        <div className="hero-buttons">
-          <a href="/projects" className="btn">
-            View Projects
-          </a>
+       <div className="hero-buttons">
+  <Link to="/projects" className="btn">
+    View Projects
+  </Link>
 
-          <a href="/contact" className="btn-outline">
-            Contact Me
-          </a>
-        </div>
+  <Link to="/contact" className="btn-outline">
+    Contact Me
+  </Link>
+</div>
       </div>
     </section>
   );
