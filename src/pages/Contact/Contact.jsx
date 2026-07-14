@@ -3,25 +3,31 @@ import "./Contact.css";
 function Contact() {
   return (
     <section className="contact">
-      <h1>Contact Me</h1>
+      <h1>Contact</h1>
 
       <p>
-        Feel free to connect with me for internships, collaborations, or
-        software development opportunities.
+        Thank you for visiting my portfolio. If you'd like to discuss
+        opportunities, projects, or collaborations, you can reach me through
+        the contact details below.
       </p>
 
       <div className="contact-card">
+
         <h3>📞 Phone</h3>
-        <p>+91 9019816134</p>
+        <a href="tel:+919019816134">
+          +91 90198 16134
+        </a>
 
         <h3>📧 Email</h3>
-        <p>srvenkatcharan@gmail.com</p>
+        <a href="mailto:srvenkatcharan@gmail.com">
+          srvenkatcharan@gmail.com
+        </a>
 
         <h3>💼 LinkedIn</h3>
         <a
           href="https://www.linkedin.com/in/sr-venkat-charan"
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
         >
           linkedin.com/in/sr-venkat-charan
         </a>
@@ -30,10 +36,11 @@ function Contact() {
         <a
           href="https://github.com/venkarcharan"
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
         >
           github.com/venkarcharan
         </a>
+
       </div>
     </section>
   );
