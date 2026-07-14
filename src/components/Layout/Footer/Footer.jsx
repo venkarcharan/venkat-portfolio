@@ -1,42 +1,80 @@
-import "./Footer.css";
+import styled from "styled-components";
+
+const FooterContainer = styled.footer`
+  background: ${({ theme }) => theme.colors.surface};
+  color: ${({ theme }) => theme.colors.text};
+  text-align: center;
+  padding: 40px 20px;
+  margin-top: 50px;
+  border-top: 1px solid ${({ theme }) => theme.colors.border};
+`;
+
+const Title = styled.h2`
+  color: ${({ theme }) => theme.colors.primary};
+  margin-bottom: 10px;
+`;
+
+const Text = styled.p`
+  margin: 10px 0;
+  color: ${({ theme }) => theme.colors.text};
+`;
+
+const FooterLinks = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin: 20px 0;
+`;
+
+const FooterLink = styled.a`
+  color: ${({ theme }) => theme.colors.text};
+  text-decoration: none;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.primary};
+  }
+`;
+
+const Copyright = styled.p`
+  margin-top: 20px;
+  font-size: 14px;
+  color: ${({ theme }) => theme.colors.secondary};
+`;
 
 function Footer() {
   return (
-    <footer className="footer">
+    <FooterContainer>
+      <Title>S R Venkat Charan</Title>
 
-      <h2>S R Venkat Charan</h2>
+      <Text>Software Developer | Full Stack Developer</Text>
 
-      <p>Software Developer | Full Stack Developer</p>
-
-      <div className="footer-links">
-        <a
-          href="mailto:srvenkatcharan@gmail.com"
-        >
+      <FooterLinks>
+        <FooterLink href="mailto:srvenkatcharan@gmail.com">
           Email
-        </a>
+        </FooterLink>
 
-        <a
+        <FooterLink
           href="https://github.com/venkarcharan"
           target="_blank"
           rel="noopener noreferrer"
         >
           GitHub
-        </a>
+        </FooterLink>
 
-        <a
+        <FooterLink
           href="https://www.linkedin.com/in/sr-venkat-charan"
           target="_blank"
           rel="noopener noreferrer"
         >
           LinkedIn
-        </a>
-      </div>
+        </FooterLink>
+      </FooterLinks>
 
-      <p className="copyright">
+      <Copyright>
         © 2026 S R Venkat Charan. All Rights Reserved.
-      </p>
-
-    </footer>
+      </Copyright>
+    </FooterContainer>
   );
 }
 

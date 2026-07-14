@@ -1,35 +1,107 @@
-import "./Home.css";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
+
+const HomeSection = styled.section`
+  min-height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 10%;
+`;
+
+const HeroContent = styled.div`
+  max-width: 800px;
+`;
+
+const Greeting = styled.p`
+  font-size: 18px;
+  color: ${({ theme }) => theme.colors.secondary};
+  margin-bottom: 10px;
+`;
+
+const Name = styled.h1`
+  font-size: 60px;
+  font-weight: 700;
+  color: ${({ theme }) => theme.colors.text};
+  margin-bottom: 15px;
+`;
+
+const Role = styled.h2`
+  font-size: 32px;
+  color: ${({ theme }) => theme.colors.primary};
+  margin-bottom: 25px;
+`;
+
+const Description = styled.p`
+  font-size: 18px;
+  line-height: 1.8;
+  color: ${({ theme }) => theme.colors.secondary};
+  margin-bottom: 35px;
+`;
+
+const HeroButtons = styled.div`
+  display: flex;
+  gap: 20px;
+`;
+
+const PrimaryButton = styled(Link)`
+  background: ${({ theme }) => theme.colors.primary};
+  color: white;
+  padding: 14px 30px;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+  }
+`;
+
+const OutlineButton = styled(Link)`
+  border: 2px solid ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.primary};
+  padding: 14px 30px;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: ${({ theme }) => theme.colors.primary};
+    color: white;
+    transform: translateY(-2px);
+  }
+`;
 
 function Home() {
   return (
-    <section className="home">
-      <div className="hero-content">
-        <p className="greeting">Hello, I'm</p>
+    <HomeSection>
+      <HeroContent>
+        <Greeting>Hello, I'm</Greeting>
 
-        <h1>S R Venkat Charan</h1>
+        <Name>S R Venkat Charan</Name>
 
-        <h2>Software Developer</h2>
+        <Role>Software Developer</Role>
 
-        <p className="description">
+        <Description>
           Computer Science Engineering student passionate about building
           scalable web applications and Android solutions. Experienced in
           Java, Python, MySQL, MongoDB, and modern web technologies with a
           strong foundation in Object-Oriented Programming, DBMS, and
           problem-solving.
-        </p>
+        </Description>
 
-       <div className="hero-buttons">
-  <Link to="/projects" className="btn">
-    View Projects
-  </Link>
+        <HeroButtons>
+          <PrimaryButton to="/projects">
+            View Projects
+          </PrimaryButton>
 
-  <Link to="/contact" className="btn-outline">
-    Contact Me
-  </Link>
-</div>
-      </div>
-    </section>
+          <OutlineButton to="/contact">
+            Contact Me
+          </OutlineButton>
+        </HeroButtons>
+      </HeroContent>
+    </HomeSection>
   );
 }
 
